@@ -9,6 +9,8 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String name;
+
     @OneToOne(cascade = CascadeType.ALL)
     private Account account;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -24,6 +26,14 @@ public class User {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Account getAccount() {
